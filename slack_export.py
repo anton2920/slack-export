@@ -53,7 +53,7 @@ def getHistory(client, channelId, pageSize=100):
                 replies.extend(response['messages'])
 
                 if response['has_more']:
-                    lastTimestamp = messages[-1]['ts']  # -1 means last element in a list
+                    lastTimestamp = replies[-1]['ts']  # -1 means last element in a list
                     sleep(1)  # Respect the Slack API rate limit
                 else:
                     break
